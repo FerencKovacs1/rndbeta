@@ -2,9 +2,8 @@ from flask import Flask, render_template, request
 
 
 
-5 application = Flask(__name__)
-
-6 app = application
+application = Flask(__name__)
+app = application
 
 @app.route('/')
 def index():
