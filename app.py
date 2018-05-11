@@ -2,7 +2,9 @@ from flask import Flask, render_template, request
 
 
 
-app = Flask(__name__)
+5 application = Flask(__name__)
+
+6 app = application
 
 @app.route('/')
 def index():
@@ -11,4 +13,4 @@ def index():
 
 
 if __name__  == '__main__':
-    app.run(debug=True)
+    app.run
