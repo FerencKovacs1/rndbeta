@@ -1,16 +1,16 @@
 .topnav {
     background-color: white;
     overflow: hidden;
+    text-align:center;
 }
 
 .topnav a {
-    float: left;
-    display: block;
-    color: black;
+    display: inline-block;
+    color: #e2c1a2;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 20px;
 }
 
 .topnav a:hover {
@@ -48,4 +48,23 @@
     display: block;
     text-align: left;
   }
+}
+
+
+.ml3 {
+  font-weight: 900;
+  font-size: 3.5em;
+}
+
+
+
+.topnav a {
+	-webkit-transition: margin 0.5s ease-out;
+    -moz-transition: margin 0.5s ease-out;
+    -o-transition: margin 0.5s ease-out;
+}
+
+.topnav a:hover {
+	cursor:pointer;
+    margin-top: 5px;
 }

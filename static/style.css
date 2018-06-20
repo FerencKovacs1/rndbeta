@@ -35,7 +35,7 @@ html {
 }
 
 .pimg1 {
-    background-image: url(/static/images/two2.jpg);
+    background-image: url(/static/images/contact2.jpg);
     min-height: 70%
 }
 
@@ -45,7 +45,7 @@ html {
 }
 
 .pimg3 {
-    background-image: url(/static/images/contact2.jpg);
+    background-image: url(/static/images/one.jpg);
     min-height: 70%
 }
 
@@ -90,6 +90,16 @@ html {
     .pimg3 {
         background-attachment: scroll
     }
+}
+
+@media(max-width:500px){
+  .ptext{
+    width:100%;
+    letter-spacing:0px;
+    font-size: 100%;
+
+
+  }
 }
 
 input[type=text],
@@ -197,3 +207,12 @@ label {
 }
 
 /*--------------------The end --------------------------------- */
+
+/*------------------%Magicfonts%--------------------------------*/
+
+.ml3 {
+  font-weight: 900;
+  font-size: 3.5em;
+}
+
+/*-----------  End of the magic fonts--------------------------*/
