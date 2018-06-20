@@ -27,19 +27,19 @@ $('#return-to-top').click(function() {      // When arrow is clicked
 // Wrap every letter in a span
 
 $('.magic').each(function(){
-  $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+  $(this).html($(this).text().replace(/([^\x00-\x10]|\w)/g, "<span class='letter'>$&</span>"));
 });
 
-anime.timeline({loop: true})
+anime.timeline({loop: false})
   .add({
     targets: '.magic .letter',
     translateY: [100,0],
     translateZ: 0,
     opacity: [0,1],
     easing: "easeOutExpo",
-    duration: 1400,
+    duration: 1,
     delay: function(el, i) {
-      return 300 + 30 * i;
+      return 3000 + 30 * i;
     }
   }).ad({
     targets: '.magic .letter',
