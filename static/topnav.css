@@ -1,13 +1,13 @@
 .topnav {
     background-color: white;
     overflow: hidden;
-    text-align:right;
+    text-align:center;
 }
 
 .topnav a {
     display: inline-block;
     color: #e2c1a2;
-    text-align: left;
+    text-align: center;
     padding: 14px 16px;
     text-decoration: none;
     font-size: 20px;
@@ -64,4 +64,18 @@
 .topnav a:hover {
 	cursor:pointer;
     margin-top: 5px;
+}
+
+
+
+/* The sticky class is added to the myTopnav with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+  padding-top: 60px;
 }
