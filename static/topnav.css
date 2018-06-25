@@ -1,13 +1,13 @@
 .topnav {
     background-color: white;
     overflow: hidden;
-    text-align:center;
+    text-align:right;
 }
 
 .topnav a {
     display: inline-block;
     color: #e2c1a2;
-    text-align: center;
+    text-align: left;
     padding: 14px 16px;
     text-decoration: none;
     font-size: 20px;
@@ -15,7 +15,7 @@
 
 .topnav a:hover {
     background-color: #ddd;
-    color: black;
+    color: white;
 }
 
 .active {
@@ -51,10 +51,7 @@
 }
 
 
-.ml3 {
-  font-weight: 900;
-  font-size: 3.5em;
-}
+
 
 
 
