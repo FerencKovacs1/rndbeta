@@ -1,0 +1,65 @@
+.get-in-touch{
+   margin: 0 auto;
+   width:100%;
+   padding-bottom: 5%;
+   padding-left: 35%;
+   padding-right: 10%;
+}
+
+
+
+.get-in-touch h2{
+    background: #e9c9ac;
+    text-transform: uppercase;
+    font-family: 'Open Sans Condensed', sans-serif;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 100;
+    padding: 20px;
+    width:50%;
+    text-align: center;
+}
+
+.get-in-touch input[type="text"],
+.get-in-touch input[type="email"],
+.get-in-touch input[type="password"],
+.get-in-touch textarea,
+.get-in-touch select
+.get-in-touch input
+{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    outline: none;
+    display: block;
+    width: 50%;
+    border: none;
+    padding: 1%;
+    border-bottom: 1px solid #ddd;
+    background: transparent;
+    margin-bottom: 10px;
+    font: 16px
+    height: 45px;
+}
+.get-in-touch textarea{
+    resize:none;
+    overflow: ;
+}
+
+
+
+
+#submit{
+      display: inline-block;
+      border: none;
+      margin: 0;
+      background: #e9c9ac;
+      color: white;
+      font-size: 1rem;
+      line-height: 1;
+      cursor: pointer;
+      text-align: center;
+      padding: 2%;
+      float: center;
+
+}

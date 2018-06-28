@@ -1,20 +1,16 @@
-// When the user scrolls the page, execute myFunction
-window.onscroll = function() {myFunction()};
 
-// Get the myTopnav
-var myTopnav = document.getElementById("myTopnav");
 
-// Get the offset position of the myTopnav
-var sticky = myTopnav.offsetTop;
 
-// Add the sticky class to the myTopnav when you reach its scroll position. Remove "sticky" when you leave the scroll position
 function myFunction() {
-  if (window.pageYOffset >= sticky) {
-    myTopnav.classList.add("sticky")
-  } else {
-    myTopnav.classList.remove("sticky");
-  }
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
 }
+
+
 
 // ===== Scroll to Top ====
 $(window).scroll(function() {
@@ -29,3 +25,26 @@ $('#return-to-top').click(function() {      // When arrow is clicked
         scrollTop : 0                       // Scroll to top of body
     }, 500);
 });
+
+
+// Wrap every letter in a span
+$('.ml16').each(function(){
+  $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+});
+
+anime.timeline({loop: false})
+  .add({
+    targets: '.ml16 .letter',
+    translateY: [-200,0],
+    easing: "easeOutExpo",
+    duration: 1400,
+    delay: function(el, i) {
+      return 30 * i;
+    }
+  }).add({
+    targets: '.',
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 1000
+  });

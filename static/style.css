@@ -18,10 +18,11 @@ body,
 html {
     height: 100%;
     margin: 0;
-    font-family: Lato, sans-serif;
-    font-weight: 400;
+    font-family: Lato, sans-serif !important;
+    font-weight: 500;
     line-height: 1.8em;
     background-color: white;
+    box-sizing: border-box;
 }
 
 .pimg1,
@@ -35,18 +36,18 @@ html {
 }
 
 .pimg1 {
-    background-image: url(/static/images/contact2.jpg);
+    background-image: url(/static/images/two2.jpg);
     min-height: 70%
 }
 
 .pimg2 {
     background-image: url(/static/images/three.jpg);
-    min-height: 400px
+    min-height: 50%;
 }
 
 .pimg3 {
     background-image: url(/static/images/one.jpg);
-    min-height: 70%
+    min-height: 50%
 }
 
 .section {
@@ -55,12 +56,13 @@ html {
 
 .section-light {
     background-color: #ffff;
-    color: #e2c1a2
+    color: #e2c1a2;
+
 }
 
 .section-dark {
     background-color: #;
-    color: #e2c1a2
+    color: #e2c1a2;
 }
 
 .ptext {
@@ -102,32 +104,13 @@ html {
   }
 }
 
-input[type=text],
-select,
-textarea {
-    width: 100%;
-    resize: vertical;
-    border-radius: 10px;
-    height: 50;
-    zoom: 1;
-    filter: alpha(opacity=50);
-    opacity: .9;
-    margin: auto;
-    padding: 10px
-}
 
-label {
-    display: inline-block;
-    color: #fff;
-    padding: 10px, ;
-    background-color: #e9c9ac
-}
 
 .container {
     border-radius: 5px;
     margin: auto;
     width: 50%;
-    padding: 10px
+    padding: 10px;
 }
 
 .col-25,
@@ -206,6 +189,15 @@ label {
     top: 5px;
 }
 
+.row {
+    display: flex;
+
+}
+
+.column {
+    flex: 50%;
+}
+
 /*--------------------The end --------------------------------- */
 
 /*------------------%Magicfonts%--------------------------------*/
@@ -243,3 +235,30 @@ label {
 
 
 /*-----------  End of the magic fonts--------------------------*/
+
+
+#about-pics{
+  border: 3px solid #73AD21;
+  float: left;
+  clear: left;
+}
+
+#about-pics img{
+  height: 200px;
+
+}
+
+
+article {
+  -webkit-columns: 2 200px;
+     -moz-columns: 2 200px;
+          columns: 2 200px;
+  -webkit-column-gap: 4em;
+     -moz-column-gap: 4em;
+          column-gap: 4em;
+  -webkit-column-rule: 1px dotted #ddd;
+     -moz-column-rule: 1px dotted #ddd;
+          column-rule: 1px dotted #ddd;
+-webkit-column-span: all;
+        column-span: all;
+}

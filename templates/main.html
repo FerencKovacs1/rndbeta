@@ -10,11 +10,15 @@
   <link rel="shortcut icon" href="/static/images/favicon.ico">
   <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
   <title>Rendezvenyszervezes</title>
   <script src="/static/java/stickynav.js" defer></script>
+  <script src="/static/java/input.js" defer></script>
   <link rel="stylesheet" href="static/style.css">
   <link rel="stylesheet" href="static/topnav.css">
   <link rel="stylesheet" href="static/disables.css">
+  <link rel="stylesheet" href="static/form.css">
 </head>
 <body>
   <!-- Return to Top -->
@@ -26,9 +30,9 @@
             <i class="fa fa-bars fa-2x"></i>
           </div>
           <div class="topnav" id="myTopnav"  >
-            <a href="#home"  class="slide-in-bottom">Főoldal</a>
-            <a href="#about-us" class="slide-in-bottom">Rólunk</a>
-            <a href="#contact" class="slide-in-bottom">Kapcsolat</a>
+            <a href="#home"  class="ml16">Főoldal</a>
+            <a href="#about-us" class="ml16">Rólunk</a>
+            <a href="#contact" class="ml16">Kapcsolat</a>
             <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
           </div>
       </nav>
@@ -40,13 +44,19 @@
       </span>
     </div>
   </div>
-  <section class="section section-light noselect">
-    <h2 >Miről szól</h2>
-    <p class="slide-in-bottom" >
-      <strong>Bojtor Andi</strong> vagyok <br/ > azzal a céllal hoztam létre a cégemet, hogy újító szellemmel,<br /> átformáljam a céges rendezvényekről alkotott képet.
-      <br />Már a kezdetektől csak Céges rendezvényekre koncentráltam.
-    </p>
+  <section class="section section-light noselect" >
+      <h2> Bojtor Andi vagyok,
+        Rendezvényszervező
+      </h2>
+      <p  style="align:center">Azzal a céllal hoztam létre a cégemet, hogy újító szellemmel,<br />
+      átformáljam rendezvényekről alkotott képet.
+      <br />Már a kezdetektől csak a Céges rendezvényekre koncentráltam.<br />
+      Mivel ebbe az irányba indultam el ezért tapasztalataim inkább erre felé orientálódtak.<br />
+      Nagy hangsúlyt fektetek  a kreatív és pontosan, időben elvégzett munkára.<br />
+      Élvezem a lehetetlennek tűnő határidőket és kéréseket.<br />
+      Folyamatosan fejlődve már évek óta teljesítek kis csapatommal makulátlanul.</p>
   </section>
+
   <div class="pimg2 noselect">
     <div class="ptext">
       <span class="border">
@@ -55,13 +65,15 @@
     </div>
   </div>
   <section class="section section-light noselect" id="about-us" >
-    <h2>Rólunk</h2>
-    <p  class="slide-in-bottom">
-      A céges rendezvényekre szakosodtam csapatommal<br />
-       Nagy hansúlyt fektetünk a kreatív és pontosan elvégzett munkára.<br />
-       Élvezzük  a lehetetlennek tünő határidőket és kéréseket.<br />
-       Folyamatosan fejlődve már évek óta teljesítünk makulátlanul.
-    </p>
+    <!--<div id="about-pics">
+      <img src="static/images/terv.jpg">
+    </div>-->
+    <p>Rendezvénytszervezek csapatának célja az, hogy minden megrendelő számára egyedi és igényesen lebonyolított élményt nyújtson. <br />
+        Lehet ez csapatépítő tréning, céges rendezvény, évzáró buli, partnertalálkozó, termékbemutató vagy konferencia.<br />
+        Kis csapatunk összehangoltságának és precizitásának köszönhetően<br />
+        a felmerülő rengeteg kérdést és váratlan problémát gördülékenyen képesek levezényelni. <br />
+        Ha kedvet kapott hozzá Keressen fel minket és dolgozzon velünk!
+   </p>
   </section>
   <div class="pimg3">
     <div class="ptext">
@@ -70,19 +82,55 @@
       </span>
     </div>
   </div>
-  <section class="section section-dark" id="contact">
-    Az oldal fejlesztés alatt.
-  <p>Email: bojtorandi@rendezvenytszervezek.hu </p>
-  <p>Telefon:+36 70 367 1975 </p>
+  <section class="row">
+    </div>
+    <div  class="get-in-touch" class="cloumn" id="contact">
+        <h2>Vedd fel velünk a kapcsolatot</h2>
+
+        {% if success %}
+
+        {% else %}
+          {% for message in form.name.errors %}
+            <div class="flash"  class="input-text js-input">{{ message }}</div>
+          {% endfor %}
+
+          {% for message in form.email.errors %}
+            <div class="flash"   class="input-text js-input">{{ message }}</div>
+          {% endfor %}
+
+          {% for message in form.subject.errors %}
+            <div class="flash" class="input-text js-input">{{ message }}</div>
+          {% endfor %}
+
+          {% for message in form.message.errors %}
+            <div class="flash" class="input-text js-input">{{ message }}</div>
+          {% endfor %}
+
+          <form action="{{ url_for('contact') }}" method=post autocomplete="off" >
+            {{ form.hidden_tag() }}
+
+            {{ form.name.label }}
+            {{ form.name  }}
+
+            {{ form.email.label }}
+            {{ form.email }}
+
+            {{ form.subject.label }}
+            {{ form.subject }}
+
+            {{ form.message.label }}
+            {{ form.message }}
+
+
+            {{ form.submit }}
+
+          </form>
+
+        {% endif %}
+    </div>
+  </div>
   </section>
-  <!--
-  A több éves tapasztalatból merítve lettek a
- A megalakulást követő években, precíz és határidőre pontos munkával, több elismerést is magukénak tudhatnak.
- <br />
- Strukturájában és müdködésében egyedülálló módszerekkel és fix díjszabással kezdtek dolgozni.
-  <section class="section section-dark">
-  </section>
-  !-->
+
   <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 
 </body>
